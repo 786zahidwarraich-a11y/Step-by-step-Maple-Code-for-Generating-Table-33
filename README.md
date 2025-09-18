@@ -1,7 +1,7 @@
-Molecular Property Prediction using Topological Indices
+**Molecular Property Prediction using Topological Indices**
 This Maple code implements regression models to predict molecular properties of Valsartan (a coronary artery disease drug) based on topological indices derived from graph theory.
 
-Overview
+**Overview**
 The code performs the following step-by-step process:
 
 Calculates topological indices for Valsartan based on edge eccentricities
@@ -14,24 +14,24 @@ Computes errors by comparing predictions with experimental values
 
 Displays comprehensive results in a formatted table
 
-Topological Indices Calculated
+**Topological Indices Calculated**
 The code computes these seven topological indices for Valsartan:
 
-First Zagreb Index (M¹?)
+First Zagreb Index (M1^e)
 
-Second Zagreb Index (M²?)
+Second Zagreb Index (M2^e)
 
-Geometric Arithmetic Index (GA?)
+Geometric Arithmetic Index (GA^e)
 
-Atom-Bond Connectivity Index (ABC?)
+Atom-Bond Connectivity Index (ABC^e)
 
-Eccentric Connectivity Index (??)
+Eccentric Connectivity Index (x^e)
 
-Inverse Sum Indeg Index (IST?)
+Inverse Sum Indeg Index (IST^e)
 
-Albertson Index (ABL?)
+Albertson Index (ABL^e)
 
-Molecular Properties Predicted
+**Molecular Properties Predicted**
 The regression models predict these eight molecular properties:
 
 Molecular Weight (MW)
@@ -50,39 +50,114 @@ Polarizability (PO)
 
 Molar Volume (MV)
 
-Mathematical Models
+**Mathematical Models**
 The code implements these regression equations:
 
-MW = 5.071009 + 14.940646·GA? - 0.051512·GA?²
+MW = 5.071009 + 14.940646·GA^e - 0.051512·GA^e²
 
-HAC = 1.633191 + 0.898649·GA?
+HAC = 1.633191 + 0.898649·GA^e
 
-CO = 1464.609602 - 411.521528·ABC? + 41.322346·ABC?² - 1.136243·ABC?³
+CO = 1464.609602 - 411.521528·ABC^e + 41.322346·ABC^e² - 1.136243·ABC^e³
 
-BP = -656.715103 + 366.999694·log(GA?)
+BP = -656.715103 + 366.999694·log(GA^e)
 
-ENV = 77.561582 - 4.542787·ABL? + 0.286690·ABL?² - 0.003783·ABL?³
+ENV = 77.561582 - 4.542787·ABL^e + 0.286690·ABL^e² - 0.003783·ABL^e³
 
-MR = -81.059629 + 13.377086·ABL? - 0.333008·ABL?² + 0.003469·ABL?³
+MR = -81.059629 + 13.377086·ABL^e - 0.333008·ABL^e² + 0.003469·ABL^e³
 
-PO = -32.110883 + 5.297975·ABL? - 0.131718·ABL?² + 0.001370·ABL?³
+PO = -32.110883 + 5.297975·ABL^e - 0.131718·ABL^e² + 0.001370·ABL^e³
 
-MV = -476.702302 + 243.262764·log(ABL?)
+MV = -476.702302 + 243.262764·log(ABL^e)
 
-Usage
+**Usage**
 For Valsartan (Default)
 Simply execute the code in Maple to see the complete analysis for Valsartan.
 
-For Other CAD Drugs
+**For Other CAD Drugs**
 To predict properties for other coronary artery disease drugs:
+Molecular Properties Prediction using Topological Indices
+** Project Overview**
+This Maple code implements regression models to predict molecular properties of Valsartan (a coronary artery disease drug) based on topological indices derived from graph theory. The models were developed through statistical analysis of molecular descriptors and validated against experimental data.
 
-Calculate the topological indices for your drug
+**Features**
+Topological Index Calculation: Computes 7 different topological indices (M1^e, M2^e, GA^e, ABC^e, ?^e, IST^e, ABL^e) from molecular structure
 
-Call the prediction function with your values:
+Property Prediction: Uses regression models to predict 8 molecular properties:
 
-maple
-predict_CAD_drug_properties(M_fe, M_ge, GA_e, ABC_e, chi_e, IST_e, ABL_e)
-Common CAD drugs include:
+Molecular Weight (MW)
+
+Heavy Atom Count (HAC)
+
+Complexity (CO)
+
+Boiling Point (BP)
+
+Enthalpy of Vaporization (ENV)
+
+Molar Refractivity (MR)
+
+Polarizability (PO)
+
+Molar Volume (MV)
+
+Error Analysis: Compares predicted values with experimental data and calculates error metrics
+
+Step-by-Step Execution: Detailed output showing each calculation step for educational purposes
+
+ **Technical Requirements**
+Software: Maple 2018 or later
+
+Dependencies: Standard Maple library only (no additional packages required)
+
+Platform: Cross-platform (Windows, macOS, Linux)
+
+**Code Structure**
+The code is organized into five main sections:
+
+Topological Index Calculation: Computes indices from edge partition data
+
+Regression Model Definition: Implements the mathematical models for property prediction
+
+Prediction Execution: Applies models to Valsartan data with detailed output
+
+Error Calculation: Compares predictions with experimental values
+
+Results Presentation: Displays comprehensive comparison table
+
+**How to Use**
+Run the Code: Copy and paste the entire code into a Maple worksheet
+
+Execute: Run the code to see predictions for Valsartan
+
+Custom Predictions: For other CAD drugs, modify the topological index values:
+
+M_1e: First Zagreb eccentricity index
+
+M_2e: Second Zagreb eccentricity index
+
+GA_e: Geometric arithmetic eccentricity index
+
+ABC_e: Atom-bond connectivity eccentricity index
+
+?_e: Eccentric connectivity index
+
+IST_e: Inverse sum indeg eccentricity index
+
+ABL_e: Eccentric adjacency index
+
+** Example Output**
+The code generates:
+
+Edge partition table with frequencies
+
+Step-by-step topological index calculations
+
+Detailed regression model applications
+
+Comprehensive comparison table with experimental values, predictions, and error metrics
+
+** Applicable Drugs**
+This approach works for various coronary artery disease drugs including:
 
 Valsartan
 
@@ -92,31 +167,34 @@ Atorvastatin
 
 Simvastatin
 
-Requirements
-Maple 2018 or newer
+Other CAD medications
 
-No additional packages required beyond standard Maple library
+** Mathematical Background**
+The implementation is based on:
 
-Output
-The code generates a comprehensive table (Table 33 format) showing:
+Graph theory concepts applied to molecular structures
 
-Experimental values
+Regression models 
 
-Predicted values
+Eccentricity-based topological indices
 
-Absolute errors
+Polynomial and logarithmic regression relationships
 
-Relative errors (%)
+** Validation**
+The models have been validated against experimental data for Valsartan:
 
-Verification
-Results should match Table 33 in the original manuscript within rounding differences.
+**Educational Value**
+This code demonstrates:
 
-File Structure
-Molecular_Property_Prediction.mpl - Main Maple code file
+Application of graph theory in cheminformatics
 
-README.md - This documentation file
+Regression modeling for molecular property prediction
 
-References
+**Error analysis techniques**
+
+Step-by-step computational chemistry calculations
+
+**References**
 This code implements the methodology described in the research paper:
 "A QSPR Study of Coronary Artery Disease Drugs Using Eccentricity-based Indices"
 
